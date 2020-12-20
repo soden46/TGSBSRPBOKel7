@@ -8,7 +8,7 @@ package Data;
  *
  * @author SYARIF
  */
-public class Pelanggan extends Karyawan {
+public class Pelanggan{
   
     Integer IdPel;
     protected String Nama;
@@ -40,8 +40,8 @@ public class Pelanggan extends Karyawan {
     
     public void tampildata(){
         System.out.println("Memeriksa Tagihan");
-        System.out.println("ID Pelanggan " +this.getIdPel() +" nama " + this.getNama()
-                           +" Tagihan " +super.TotalBayar());
+        
+
     }
 
 

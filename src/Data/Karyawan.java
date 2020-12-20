@@ -4,37 +4,62 @@
  * and open the template in the editor.
  */
 package Data;
-
+import java.util.Scanner;
 /**
  *
  * @author SYARIF
  */
-public class Karyawan{
-    private Double kWh;
-
-    public void setHarga(Double kWh) {
-        if(kWh == 85.25 ){
-            System.out.println("Harga = 30.123 ");
+public class Karyawan extends Pelanggan{
+    private Double kWh, Harga;
+    private Integer pilih;
+    public int Pilihan;
+    
+    Scanner input4=new Scanner(System.in);
+    public void setkWh(Double kWh) {
+        if(85.25 != kWh){
             this.kWh=kWh;
-        }else if(kWh == 90.12){
-            System.out.println("Harga = Rp 70.123");
+        }else if(90.12 != kWh){
             this.kWh=kWh;
-        }else{
-            System.out.println("Error Harga Harus Lebih Dari Rp.30.123");
+    }else{
+            System.out.println("Pilihan Tidak Ada");
+             }
         }
-    }
     
     public Double getHarga(){
         return kWh;
     }
     
-    public Double TotalBayar(){
-        Double TotalBayar=kWh;
-        return TotalBayar;
-    }
 
+    @Override
     public void tampildata() {
-        System.out.println("Memeriksa Tagihan");
+        System.out.println("Memeriksa Data");
+        System.out.println("Id Pelanggan = " +super.getIdPel() + "Nama Pelanggan"
+                            + super.getNama()+"Alamat" +super.getAlamat()
+                            + "Tagihan" + this.TotalBayar());
+    }
+    
+    public void SetTotalBayar(int Pilihan){
+        if(Pilihan==1){
+            System.out.println("Masukkan kWh Meter = ");
+            kWh=input4.nextDouble();
+        if(kWh.equals(85.25)){
+            System.out.println("Total Bayar = Rp 30.123");
+            System.exit(0);
+    }
+        else if(kWh.equals(90.12)){
+            System.out.println("Total Bayar = Rp 90.123");
+            System.exit(0);
+    }else{
+            System.out.println("Pilihan Tidak Ada");
+            System.exit(0);
+             }
+        }
+        this.Harga=Harga;
+        this.Pilihan=Pilihan;
+    }
+    
+    public Double TotalBayar(){
+        return this.Harga;
     }
     
 }
