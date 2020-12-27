@@ -80,7 +80,6 @@ public class Tagihan extends Pelanggan implements PLN{
     public void tampil() {
     System.out.println("ID Pelanggan Adalah "+this.IdPel);
     System.out.println("Nama Pelanggan Adalah "+this.Nama);
-    System.out.println("Alamat Pelanggan Adalah "+this.Alamat); //To change body of generated methods, choose Tools | Templates.
-    }
+    System.out.println("Alamat Pelanggan Adalah "+this.Alamat);
 
 }
