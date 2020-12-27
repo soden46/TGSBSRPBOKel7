@@ -1,65 +1,73 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Data;
 import java.util.Scanner;
-/**
- *
- * @author SYARIF
- */
+
 public class Karyawan extends Pelanggan{
-    private Double kWh, Harga;
-    private Integer pilih;
-    public int Pilihan;
-    
-    Scanner input4=new Scanner(System.in);
-    public void setkWh(Double kWh) {
-        if(85.25 != kWh){
-            this.kWh=kWh;
-        }else if(90.12 != kWh){
-            this.kWh=kWh;
-    }else{
-            System.out.println("Pilihan Tidak Ada");
-             }
-        }
-    
-    public Double getHarga(){
-        return kWh;
+    public int IdPel,p,Pilihan;
+    protected String Nama;
+    protected String Alamat;
+    private Double Harga;
+    Scanner mas = new Scanner(System.in);
+    public Karyawan() {
+    }
+        public Karyawan(int IdPel, int p, int Pilihan, String Nama, String Alamat, Double Harga) {
+        this.IdPel = IdPel;
+        this.p = p;
+        this.Pilihan = Pilihan;
+        this.Nama = Nama;
+        this.Alamat = Alamat;
+        this.Harga = Harga;
+    }
+
+   
+
+    public Integer getIdPel(){
+        return IdPel;
+    }
+    public String getNama(){
+        return Nama;
+    }
+    public String getAlamat(){
+        return Alamat;
     }
     
 
+    public void setIdPel(int IdPel) {  
+            this.IdPel=IdPel;
+    }
+
+    public void setNama(String Nama) {
+        
+        this.Nama=Nama;
+    }
+
+    public void setAlamat(String Alamat) {
+       this.Alamat=Alamat;
+    }
+    public void main(){
+        System.out.println(" Masukan ID Pelanggan");
+        IdPel = mas.nextInt();
+        System.out.println(" Masukan Nama Pelanggan");
+        Nama = mas.next();
+        System.out.println(" Masukan Alamat Pelanggan");
+        this.Alamat = mas.next();
+        System.out.println("");
+        System.out.println("Data Pelanggan");
+        System.out.println("ID Pelanggan Adalah "+this.IdPel);
+        System.out.println("Nama Pelanggan Adalah "+this.Nama);
+        System.out.println("Alamat Pelanggan Adalah "+this.Alamat);
+        
+    }
+
     @Override
-    public void tampildata() {
-        System.out.println("Memeriksa Data");
-        System.out.println("Id Pelanggan = " +super.getIdPel() + "Nama Pelanggan"
-                            + super.getNama()+"Alamat" +super.getAlamat()
-                            + "Tagihan" + this.TotalBayar());
+    public void tampil() {
+    System.out.println("ID Pelanggan Adalah "+this.IdPel);
+    System.out.println("Nama Pelanggan Adalah "+this.Nama);
+    System.out.println("Alamat Pelanggan Adalah "+this.Alamat);
     }
-    
-    public void SetTotalBayar(int Pilihan){
-        if(Pilihan==1){
-            System.out.println("Masukkan kWh Meter = ");
-            kWh=input4.nextDouble();
-        if(kWh.equals(85.25)){
-            System.out.println("Total Bayar = Rp 30.123");
-            System.exit(0);
+
+    @Override
+    public void tampilData() {
+
+        System.out.println("Total kWh Adalah " +this.IdPel);
     }
-        else if(kWh.equals(90.12)){
-            System.out.println("Total Bayar = Rp 90.123");
-            System.exit(0);
-    }else{
-            System.out.println("Pilihan Tidak Ada");
-            System.exit(0);
-             }
-        }
-        this.Harga=Harga;
-        this.Pilihan=Pilihan;
-    }
-    
-    public Double TotalBayar(){
-        return this.Harga;
-    }
-    
-}
+ }
